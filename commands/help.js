@@ -2,10 +2,10 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     info: {
-        name: "help",
-        description: "To show all commands",
+        name: "HELP",
+        description: "GET ALL COMMANDS",
         usage: "[command]",
-        aliases: ["commands", "help me", "pls help"]
+        aliases: ["help", "commands"]
     },
 
     run: async function(client, message, args){
@@ -13,13 +13,13 @@ module.exports = {
 
         client.commands.forEach(cmd => {
             let cmdinfo = cmd.info
-            allcmds+="``"+client.config.prefix+cmdinfo.name+" "+cmdinfo.usage+"`` ~ "+cmdinfo.description+"\n"
+            allcmds+=""U CAN GET ALL COMMANDS AT [COMMANDS](https://discord.gg/godxop) ""
         })
 
         let embed = new MessageEmbed()
         .setAuthor("Commands of "+client.user.username, "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif")
         .setColor("BLUE")
-        .setDescription(allcmds)
+        .setDescription(ALL CMDS)
         .setFooter(`To get info of each command you can do ${client.config.prefix}help [command] | Hander by ItzCutePikachu#2006`)
 
         if(!args[0])return message.channel.send(embed)
